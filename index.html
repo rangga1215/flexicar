@@ -100,11 +100,9 @@
                 <li><i class="fas fa-suitcase"></i> 2 Bagasi</li>
                 <li><i class="fas fa-cogs"></i> Manual/Matic</li>
               </ul>
-              <a
-                href="https://wa.me/6281234567890?text=Saya%20tertarik%20sewa%20Avanza"
-                class="btn-block"
-                >Booking via WA</a
-              >
+              <button class="btn-block" onclick="addToCart('MPV Family (Avanza/Xenia)', 350000)">
+                  <i class="fas fa-cart-plus"></i> Tambah Keranjang
+              </button>
             </div>
           </div>
           <div class="car-card">
@@ -122,18 +120,15 @@
                 <li><i class="fas fa-suitcase"></i> 4 Bagasi</li>
                 <li><i class="fas fa-cogs"></i> Matic</li>
               </ul>
-              <a
-                href="https://wa.me/6281234567890?text=Saya%20tertarik%20sewa%20Innova"
-                class="btn-block"
-                >Booking via WA</a
-              >
+              <button class="btn-block" onclick="addToCart('Innova Reborn', 550000)">
+                  <i class="fas fa-cart-plus"></i> Tambah Keranjang
+              </button>
             </div>
           </div>
           <div class="car-card">
             <div class="car-img">
               <img
-                src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80
-"
+                src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80"
                 alt="Pajero Sport"
               />
             </div>
@@ -145,11 +140,9 @@
                 <li><i class="fas fa-suitcase"></i> 4 Bagasi</li>
                 <li><i class="fas fa-cogs"></i> Matic</li>
               </ul>
-              <a
-                href="https://wa.me/6281234567890?text=Saya%20tertarik%20sewa%20Pajero"
-                class="btn-block"
-                >Booking via WA</a
-              >
+              <button class="btn-block" onclick="addToCart('SUV Luxury (Pajero/Fortuner)', 1200000)">
+                  <i class="fas fa-cart-plus"></i> Tambah Keranjang
+              </button>
             </div>
           </div>
         </div>
@@ -170,7 +163,7 @@
             <i class="fas fa-map-marker-alt"></i> Jl. Raya Utama No. 123,
             Jakarta
           </p>
-          <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+          <p><i class="fas fa-phone"></i> +62 812 7329 8780</p>
           <p><i class="fas fa-envelope"></i> info@flexicartravel.com</p>
         </div>
         <div class="footer-col">
@@ -187,6 +180,42 @@
       </div>
     </footer>
 
+    <div class="cart-floating-icon" onclick="toggleCartModal()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <div id="cartModalOverlay" class="cart-modal-overlay">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Keranjang Pesanan</h3>
+                <span class="close-modal-btn" onclick="toggleCartModal()">&times;</span>
+            </div>
+
+            <div id="cartItemsList" class="cart-items-list">
+                <p class="empty-cart-msg">Keranjang masih kosong.</p>
+            </div>
+
+            <div class="cart-summary">
+            <p>Total Estimasi (Per Hari): <span id="cartTotalAmount">Rp 0</span></p>
+            </div>
+
+            <div class="checkout-form">
+                <h4>Data Pemesan</h4>
+                <input type="text" id="co-nama" placeholder="Nama Lengkap" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                <input type="text" id="co-wa" placeholder="Nomor WhatsApp" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <input type="text" onfocus="(this.type='date')" id="co-tgl-mulai" placeholder="Tgl Mulai" style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="text" onfocus="(this.type='date')" id="co-tgl-selesai" placeholder="Tgl Selesai" style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <button class="btn-block" style="background-color: #25D366; border: none;" onclick="checkoutWA()">
+                    <i class="fab fa-whatsapp"></i> Pesan & Bayar Sekarang
+                </button>
+                <p style="text-align: center; margin-top: 10px; font-size: 0.9rem; color: #666;">*Pembayaran & ketersediaan final dikonfirmasi via WA.</p>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
